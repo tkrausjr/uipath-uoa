@@ -1,0 +1,360 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="741,4347" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:d="clr-namespace:Datatable_to_HTML;assembly=datatable_to_html" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/python" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:uas="clr-namespace:UiPath.Activities.System;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="56">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.Activities.System</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Python</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Datatable_to_HTML</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Python.Activities</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>datatable_to_html</AssemblyReference>
+      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Daily &#xD;&#xA;1) Login to barchart.com website&#xA;2) Navigate to Unusual Options Activity &#xA;3) Download barchart-unusual-options-activity.csv &amp; mobe to \Documents\UOA Workspace\barchart-data folder&#xA;4) Load &quot;Z:\finance-analysis\ipython\daily-analysis\daily-uoa-analysis_uipath-python.py&quot; Python Script&#xD;&#xA;5) Call analyze: function in PYthon script&#xD;&#xA;&#xA;&#xA;" DisplayName="Sequence for Daily UOA Analysis" sap:VirtualizedContainerService.HintSize="639,4282" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:PasswordCredentials" Name="uoa_creds" />
+      <Variable x:TypeArguments="s:String[]" Default="[{&quot;C:\Users\tkraus\Downloads\IBD 50.xlsx&quot;,&quot;C:\Users\tkraus\Downloads\Accelerating Sales.xlsx&quot;,&quot;C:\Users\tkraus\Downloads\Stocks That Funds Are Buying.xlsx&quot;,&quot;C:\Users\tkraus\Downloads\Stock Spotlight.xlsx&quot;}]" Name="file_paths" />
+      <Variable x:TypeArguments="x:Boolean" Name="loggedin" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uas:GetUsernamePasswordX OrchestratorCredentialName="{x:Null}" TimeoutInSeconds="{x:Null}" AutosubmitTimeoutSeconds="1" Credential="[uoa_creds]" CredentialName="UiPath: IBD-Investors-Website" CredentialsSource="CredentialsManager" DisplayName="Get Username/Password" sap:VirtualizedContainerService.HintSize="597,173" sap2010:WorkflowViewState.IdRef="GetUsernamePasswordX_1" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Unusual'" sap:VirtualizedContainerService.HintSize="597,1983" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="09ca29fbaa963316de1ff92dd0213873" Selector="&lt;html app='chrome.exe' omit:title='Unusual Stock Options Activity - Barchart.com' /&gt;">
+      <ui:BrowserScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="563,1837" sap2010:WorkflowViewState.IdRef="Sequence_27">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="521,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="http://barchart.com" />
+            <ui:UiElementExists DisplayName="Element Exists 'INPUT'" Exists="[loggedin]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6975753f-368f-4bdb-9df9-8362c0b13584" InformativeScreenshot="283af2cd907794f50506afc9aeb2c61c" Selector="&lt;html app='chrome.exe' omit:title='Unusual Stock Options Activity - Barchart.com' /&gt;&lt;webctrl aaname='  Log In ' tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[loggedin=False]" sap:VirtualizedContainerService.HintSize="521,871" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Login Sequence" sap:VirtualizedContainerService.HintSize="376,692" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /login'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea43d054-3cf5-4b4f-a09d-190047a9241e" InformativeScreenshot="5f7685cac0a085c2aacaddc226076c77" Selector="&lt;webctrl aaname='  Log In ' tag='A' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ContinueOnError="True" DelayBefore="2000" DisplayName="Type Username" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[uoa_creds.Username]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="924ec794-083c-46ab-989b-917999c54fe3" InformativeScreenshot="585231e1b1454c94d9d02067978b763d" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ContinueOnError="True" DisplayName="Type Password" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[uoa_creds.Password]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e2550b6b-9f84-42b9-a704-79e6c73cf6e3" InformativeScreenshot="a5d9ca8feab7e12d44a4955d748cdcac" Selector="&lt;webctrl tag='INPUT' type='password' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'LOGIN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="27d58cc9-1173-4bb3-93ea-a4af2b45f6c0" InformativeScreenshot="0f117c0987b7923f753a62488dcd17bc" Selector="&lt;webctrl tag='BUTTON' type='submit' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                </Sequence>
+              </If.Then>
+            </If>
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate UOA Page" sap:VirtualizedContainerService.HintSize="521,59" sap2010:WorkflowViewState.IdRef="NavigateTo_3" Url="https://www.barchart.com/options/unusual-activity/stocks" />
+            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Download Button'" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2abef349-3b00-4cf7-9e58-157a96b76cd7" InformativeScreenshot="3d4e38f53926d1826a30ba30c7ba29a1" Selector="&lt;webctrl aaname='download' omit:parentid='main-content-column' tag='SPAN' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'chrome.exe  Save As'" sap:VirtualizedContainerService.HintSize="521,344" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="6026c85a00efc0514e14c9986b191935" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;">
+              <ui:WindowScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Save' Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="21e7601d-b1a1-4b38-8940-7641ab3e166b" InformativeScreenshot="aae5280130fa59637d6d137b13528592" Selector="&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </Sequence>
+                </ActivityAction>
+              </ui:WindowScope.Body>
+            </ui:WindowScope>
+          </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+    </ui:BrowserScope>
+    <Sequence DisplayName="FileMove Sequence" sap:VirtualizedContainerService.HintSize="597,469" sap2010:WorkflowViewState.IdRef="Sequence_16">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="462,377" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Directory.GetFiles(&quot;C:\Users\tkraus\Downloads\&quot;, &quot;unusual-stock-options-activity*.csv&quot;)]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="csv_file" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="426,252" sap2010:WorkflowViewState.IdRef="Sequence_19">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MoveFile ContinueOnError="{x:Null}" Destination="C:\Users\tkraus\Documents\UOA Workspace\barchart-data" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[csv_file.ToString]" />
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+      </ui:ForEach>
+    </Sequence>
+    <Sequence DisplayName="Data Analysis Sequence" sap:VirtualizedContainerService.HintSize="597,1273" sap2010:WorkflowViewState.IdRef="Sequence_29">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="p:PythonObject" Name="python_analyze_function" />
+        <Variable x:TypeArguments="p:PythonObject" Name="function_output" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="410,1181" sap2010:WorkflowViewState.IdRef="PythonScope_1" Path="C:\Users\tkraus\AppData\Local\Programs\Python\Python37" TargetPlatform="x64" Version="Python 3.7">
+        <p:PythonScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="PythonEngineSessionProperty" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1145" sap2010:WorkflowViewState.IdRef="Sequence_28">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="python_analyze_output" />
+                <Variable x:TypeArguments="sd:DataTable" Name="jackpot_dt" />
+                <Variable x:TypeArguments="x:String" Name="jackpot_dt_text" />
+                <Variable x:TypeArguments="x:String" Name="html_message_body_2" />
+                <Variable x:TypeArguments="x:Int32" Name="dt_row_count" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <p:LoadScript Code="{x:Null}" DisplayName="Load Python Script" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadScript_1" Result="[python_analyze_function]" ScriptFile="Z:\finance-analysis\ipython\daily-analysis\daily-uoa-analysis_uipath-python.py" />
+              <p:InvokeMethod Parameters="{x:Null}" DisplayName="Invoke Python Method" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" Instance="[python_analyze_function]" Name="analyze" Result="[function_output]" />
+              <p:GetObject x:TypeArguments="x:String" DisplayName="Get Python Object" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="GetObject`1_1" PythonObject="[function_output]" Result="[python_analyze_output]" />
+              <Assign sap2010:Annotation.AnnotationText="Requires Import of Newtonsoft.Json Package to Namespace&#xA;" DisplayName="Deserialize JSON Array -&gt; Datatable" sap:VirtualizedContainerService.HintSize="334,120" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[jackpot_dt]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable">[JsonConvert.DeserializeObject(of DataTable)(python_analyze_output)]</InArgument>
+                </Assign.Value>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Assign>
+              <ui:OutputDataTable DataTable="[jackpot_dt]" DisplayName="DEBUG-Output-DataTable to Text" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[jackpot_dt_text]" />
+              <Assign DisplayName="Debug Assign" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">[dt_row_count]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">[jackpot_dt.RowCount]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="DEBUG-Count DataTable Rows" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[dt_row_count]" />
+              <d:Convert_DatTable_to_HTML ContinueOnError="{x:Null}" HtmlTable="{x:Null}" DisplayName="Convert DatTable to HTML" HeaderBackroundColor="Aquamarine" HeaderTextColor="Black" sap:VirtualizedContainerService.HintSize="334,22" HtmlBodyWithTable="[html_message_body_2]" sap2010:WorkflowViewState.IdRef="Convert_DatTable_to_HTML_1" Input_datatable="[jackpot_dt]" TableBodyBackgroundColor="" TableBodyTextColor="Black" TableTextAlign="Center" />
+              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[html_message_body_2]" DisplayName="Send SMTP Mail Message" Email="tkprograms6@gmail.com" EnableSSL="True" From="tkprograms6@gmail.com" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Password="bcvpcrvjlkzismlk" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="UIPath-Nightly UOA &amp; IBD List Matches" To="tkrausjr@gmail.com">
+                <ui:SendMail.Files>
+                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                </ui:SendMail.Files>
+              </ui:SendMail>
+            </Sequence>
+          </ActivityAction>
+        </p:PythonScope.Body>
+      </p:PythonScope>
+    </Sequence>
+  </Sequence>
+</Activity>

@@ -1,0 +1,60 @@
+{
+  "name": "Daily_UOA_BarChart_IBD_Analysis",
+  "description": "v0.6",
+  "main": "Main.xaml",
+  "dependencies": {
+    "DatatableToHtmlTableString": "[1.0.1]",
+    "UiPath.Excel.Activities": "[2.10.4]",
+    "UiPath.Mail.Activities": "[1.10.5]",
+    "UiPath.Python.Activities": "[1.4.1]",
+    "UiPath.System.Activities": "[21.10.2]",
+    "UiPath.UIAutomation.Activities": "[21.4.4]",
+    "UiPath.WebAPI.Activities": "[1.9.2]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "21.10.3.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "44f0c206-001c-4c10-a885-7f8a79761a8f",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}
