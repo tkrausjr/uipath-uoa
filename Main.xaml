@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="741,4347" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:d="clr-namespace:Datatable_to_HTML;assembly=datatable_to_html" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/python" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:uas="clr-namespace:UiPath.Activities.System;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="928,4641" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:d="clr-namespace:Datatable_to_HTML;assembly=datatable_to_html" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/python" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:uas="clr-namespace:UiPath.Activities.System;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
       <x:String>System.Activities</x:String>
@@ -80,13 +80,14 @@
       <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Daily &#xD;&#xA;1) Login to barchart.com website&#xA;2) Navigate to Unusual Options Activity &#xA;3) Download barchart-unusual-options-activity.csv &amp; mobe to \Documents\UOA Workspace\barchart-data folder&#xA;4) Load &quot;Z:\finance-analysis\ipython\daily-analysis\daily-uoa-analysis_uipath-python.py&quot; Python Script&#xD;&#xA;5) Call analyze: function in PYthon script&#xD;&#xA;&#xA;&#xA;" DisplayName="Sequence for Daily UOA Analysis" sap:VirtualizedContainerService.HintSize="639,4282" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap2010:Annotation.AnnotationText="Daily &#xA;1) Login to barchart.com website&#xA;2) Navigate to Unusual Options Activity &#xA;3) Download barchart-unusual-options-activity.csv &amp; mobe to \Documents\UOA Workspace\barchart-data folder&#xA;4) Load &quot;Z:\finance-analysis\ipython\daily-analysis\daily-uoa-analysis_uipath-python.py&quot; Python Script&#xA;5) Call analyze: function in PYthon script&#xA;" DisplayName="Sequence for Daily UOA Analysis" sap:VirtualizedContainerService.HintSize="639,4576" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:PasswordCredentials" Name="uoa_creds" />
       <Variable x:TypeArguments="s:String[]" Default="[{&quot;C:\Users\tkraus\Downloads\IBD 50.xlsx&quot;,&quot;C:\Users\tkraus\Downloads\Accelerating Sales.xlsx&quot;,&quot;C:\Users\tkraus\Downloads\Stocks That Funds Are Buying.xlsx&quot;,&quot;C:\Users\tkraus\Downloads\Stock Spotlight.xlsx&quot;}]" Name="file_paths" />
-      <Variable x:TypeArguments="x:Boolean" Name="loggedin" />
+      <Variable x:TypeArguments="x:Boolean" Name="not_loggedin" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -95,21 +96,21 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uas:GetUsernamePasswordX OrchestratorCredentialName="{x:Null}" TimeoutInSeconds="{x:Null}" AutosubmitTimeoutSeconds="1" Credential="[uoa_creds]" CredentialName="UiPath: IBD-Investors-Website" CredentialsSource="CredentialsManager" DisplayName="Get Username/Password" sap:VirtualizedContainerService.HintSize="597,173" sap2010:WorkflowViewState.IdRef="GetUsernamePasswordX_1" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Unusual'" sap:VirtualizedContainerService.HintSize="597,1983" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="09ca29fbaa963316de1ff92dd0213873" Selector="&lt;html app='chrome.exe' omit:title='Unusual Stock Options Activity - Barchart.com' /&gt;">
+    <uas:GetUsernamePasswordX OrchestratorCredentialName="{x:Null}" TimeoutInSeconds="{x:Null}" AutosubmitTimeoutSeconds="1" Credential="[uoa_creds]" CredentialName="UiPath: Barchart.com" CredentialsSource="CredentialsManager" DisplayName="Get Username/Password" sap:VirtualizedContainerService.HintSize="597,173" sap2010:WorkflowViewState.IdRef="GetUsernamePasswordX_1" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Unusual'" sap:VirtualizedContainerService.HintSize="597,2139" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="09ca29fbaa963316de1ff92dd0213873" Selector="&lt;html app='chrome.exe' omit:title='Unusual Stock Options Activity - Barchart.com' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="563,1837" sap2010:WorkflowViewState.IdRef="Sequence_27">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="563,1993" sap2010:WorkflowViewState.IdRef="Sequence_27">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="521,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="http://barchart.com" />
-            <ui:UiElementExists DisplayName="Element Exists 'INPUT'" Exists="[loggedin]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+            <ui:UiElementExists DisplayName="Element Exists 'INPUT'" Exists="[not_loggedin]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6975753f-368f-4bdb-9df9-8362c0b13584" InformativeScreenshot="283af2cd907794f50506afc9aeb2c61c" Selector="&lt;html app='chrome.exe' omit:title='Unusual Stock Options Activity - Barchart.com' /&gt;&lt;webctrl aaname='  Log In ' tag='A' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -121,7 +122,7 @@
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[loggedin=False]" sap:VirtualizedContainerService.HintSize="521,871" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[not_loggedin=True]" sap:VirtualizedContainerService.HintSize="521,881" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence DisplayName="Login Sequence" sap:VirtualizedContainerService.HintSize="376,692" sap2010:WorkflowViewState.IdRef="Sequence_25">
                   <sap:WorkflowViewStateService.ViewState>
@@ -200,6 +201,18 @@
                 </Sequence>
               </If.Then>
             </If>
+            <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'A'" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6c860912-9eec-477b-b37f-8dc66eb52926" InformativeScreenshot="2aa83ec3c13677b6399f23476fe5cf5b" Selector="&lt;webctrl aria-role='listbox' tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
             <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate UOA Page" sap:VirtualizedContainerService.HintSize="521,59" sap2010:WorkflowViewState.IdRef="NavigateTo_3" Url="https://www.barchart.com/options/unusual-activity/stocks" />
             <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Download Button'" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
@@ -223,7 +236,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'chrome.exe  Save As'" sap:VirtualizedContainerService.HintSize="521,344" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="6026c85a00efc0514e14c9986b191935" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;">
+            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" ContinueOnError="True" DisplayName="Attach Window 'chrome.exe  Save As'" sap:VirtualizedContainerService.HintSize="521,344" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="6026c85a00efc0514e14c9986b191935" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;">
               <ui:WindowScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -289,7 +302,7 @@
         </ui:ForEach.Body>
       </ui:ForEach>
     </Sequence>
-    <Sequence DisplayName="Data Analysis Sequence" sap:VirtualizedContainerService.HintSize="597,1273" sap2010:WorkflowViewState.IdRef="Sequence_29">
+    <Sequence DisplayName="Data Analysis Sequence" sap:VirtualizedContainerService.HintSize="597,1443" sap2010:WorkflowViewState.IdRef="Sequence_29">
       <Sequence.Variables>
         <Variable x:TypeArguments="p:PythonObject" Name="python_analyze_function" />
         <Variable x:TypeArguments="p:PythonObject" Name="function_output" />
@@ -300,13 +313,13 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="410,1181" sap2010:WorkflowViewState.IdRef="PythonScope_1" Path="C:\Users\tkraus\AppData\Local\Programs\Python\Python37" TargetPlatform="x64" Version="Python 3.7">
+      <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="512,1351" sap2010:WorkflowViewState.IdRef="PythonScope_1" Path="C:\Users\tkraus\AppData\Local\Programs\Python\Python37" TargetPlatform="x64" Version="Python 3.7">
         <p:PythonScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="PythonEngineSessionProperty" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1145" sap2010:WorkflowViewState.IdRef="Sequence_28">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="478,1315" sap2010:WorkflowViewState.IdRef="Sequence_28">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="python_analyze_output" />
                 <Variable x:TypeArguments="sd:DataTable" Name="jackpot_dt" />
@@ -319,10 +332,10 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <p:LoadScript Code="{x:Null}" DisplayName="Load Python Script" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadScript_1" Result="[python_analyze_function]" ScriptFile="Z:\finance-analysis\ipython\daily-analysis\daily-uoa-analysis_uipath-python.py" />
-              <p:InvokeMethod Parameters="{x:Null}" DisplayName="Invoke Python Method" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" Instance="[python_analyze_function]" Name="analyze" Result="[function_output]" />
-              <p:GetObject x:TypeArguments="x:String" DisplayName="Get Python Object" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="GetObject`1_1" PythonObject="[function_output]" Result="[python_analyze_output]" />
-              <Assign sap2010:Annotation.AnnotationText="Requires Import of Newtonsoft.Json Package to Namespace&#xA;" DisplayName="Deserialize JSON Array -&gt; Datatable" sap:VirtualizedContainerService.HintSize="334,120" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <p:LoadScript Code="{x:Null}" DisplayName="Load Python Script" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="LoadScript_1" Result="[python_analyze_function]" ScriptFile="Z:\finance-analysis\ipython\daily-analysis\daily-uoa-analysis_uipath-python.py" />
+              <p:InvokeMethod Parameters="{x:Null}" DisplayName="Invoke Python Method" sap:VirtualizedContainerService.HintSize="436,80" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" Instance="[python_analyze_function]" Name="analyze" Result="[function_output]" />
+              <p:GetObject x:TypeArguments="x:String" DisplayName="Get Python Object" sap:VirtualizedContainerService.HintSize="436,80" sap2010:WorkflowViewState.IdRef="GetObject`1_1" PythonObject="[function_output]" Result="[python_analyze_output]" />
+              <Assign sap2010:Annotation.AnnotationText="Requires Import of Newtonsoft.Json Package to Namespace&#xA;" DisplayName="Deserialize JSON Array -&gt; Datatable" sap:VirtualizedContainerService.HintSize="436,120" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="sd:DataTable">[jackpot_dt]</OutArgument>
                 </Assign.To>
@@ -335,8 +348,19 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
-              <ui:OutputDataTable DataTable="[jackpot_dt]" DisplayName="DEBUG-Output-DataTable to Text" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[jackpot_dt_text]" />
-              <Assign DisplayName="Debug Assign" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,250" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="326,172" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:OutputDataTable DataTable="[jackpot_dt]" DisplayName="DEBUG-Output-DataTable to Text" sap:VirtualizedContainerService.HintSize="284,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[jackpot_dt_text]" />
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+              <Assign DisplayName="Debug Assign" sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[dt_row_count]</OutArgument>
                 </Assign.To>
@@ -344,9 +368,9 @@
                   <InArgument x:TypeArguments="x:Int32">[jackpot_dt.RowCount]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="DEBUG-Count DataTable Rows" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[dt_row_count]" />
-              <d:Convert_DatTable_to_HTML ContinueOnError="{x:Null}" HtmlTable="{x:Null}" DisplayName="Convert DatTable to HTML" HeaderBackroundColor="Aquamarine" HeaderTextColor="Black" sap:VirtualizedContainerService.HintSize="334,22" HtmlBodyWithTable="[html_message_body_2]" sap2010:WorkflowViewState.IdRef="Convert_DatTable_to_HTML_1" Input_datatable="[jackpot_dt]" TableBodyBackgroundColor="" TableBodyTextColor="Black" TableTextAlign="Center" />
-              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[html_message_body_2]" DisplayName="Send SMTP Mail Message" Email="tkprograms6@gmail.com" EnableSSL="True" From="tkprograms6@gmail.com" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Password="bcvpcrvjlkzismlk" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="UIPath-Nightly UOA &amp; IBD List Matches" To="tkrausjr@gmail.com">
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="DEBUG-Count DataTable Rows" sap:VirtualizedContainerService.HintSize="436,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[dt_row_count]" />
+              <d:Convert_DatTable_to_HTML ContinueOnError="{x:Null}" HtmlTable="{x:Null}" DisplayName="Convert DatTable to HTML" HeaderBackroundColor="Aquamarine" HeaderTextColor="Black" sap:VirtualizedContainerService.HintSize="436,22" HtmlBodyWithTable="[html_message_body_2]" sap2010:WorkflowViewState.IdRef="Convert_DatTable_to_HTML_1" Input_datatable="[jackpot_dt]" TableBodyBackgroundColor="" TableBodyTextColor="Black" TableTextAlign="Center" />
+              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[html_message_body_2]" DisplayName="Send SMTP Mail Message" Email="tkprograms6@gmail.com" EnableSSL="True" From="tkprograms6@gmail.com" sap:VirtualizedContainerService.HintSize="436,147" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Password="bcvpcrvjlkzismlk" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="UIPath-Nightly UOA &amp; IBD List Matches" To="tkrausjr@gmail.com">
                 <ui:SendMail.Files>
                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                 </ui:SendMail.Files>
